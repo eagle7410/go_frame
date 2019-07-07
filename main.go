@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./lib"
 	"github.com/gorilla/handlers"
+	"go_frame/lib"
 	"log"
 	"net/http"
 )

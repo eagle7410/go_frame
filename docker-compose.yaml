@@ -7,8 +7,8 @@ services:
 #      dockerfile: DockerfileDev
 #    depends_on:
 #      - mongo
-    volumes:
-      - ./lib:/go/src/back/lib
+#    volumes:
+#      - ./lib:/go/src/back/lib
     ports:
       - "8080:8080"
     environment:
