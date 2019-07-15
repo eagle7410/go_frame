@@ -2,7 +2,7 @@
 package lib
 
 import (
-	"fmt"
+	util "github.com/eagle7410/go_util/libs"
 	"github.com/gorilla/mux"
 	"net/http"
 )
@@ -18,7 +18,7 @@ func GetRouter() *mux.Router {
 	//			http.FileServer(http.Dir(path.Join(ENV.WorkDir, "/front/dist"))))))
 
 	// Tech
-	r.HandleFunc("/ping", ping)
+	r.HandleFunc("/ping", util.Ping)
 	r.HandleFunc("/", toIndex)
 
 	return r
@@ -32,10 +32,6 @@ func GetRouter() *mux.Router {
 //
 //	})
 //}
-
-func ping(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "PONG \n  IP: %v\n  Host: %v\n", ReadUserIP(r), r.Host)
-}
 
 func toIndex(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/ping", http.StatusSeeOther)

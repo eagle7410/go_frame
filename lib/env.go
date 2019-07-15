@@ -15,6 +15,7 @@ type env struct {
 	TimeZone,
 	Place string
 	IsDev bool
+	AllowedMethods [] string
 }
 
 func (i *env) GetIsDev() bool {
@@ -22,7 +23,7 @@ func (i *env) GetIsDev() bool {
 }
 
 func (i *env) Init() error {
-
+	i.AllowedMethods = []string{"GET", "POST", "OPTIONS"}
 	pwd, err := os.Getwd()
 
 	fmt.Println(pwd)
