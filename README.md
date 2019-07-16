@@ -1,6 +1,10 @@
-
+env example
+```.env
+Place=Develop
+isDev=true
+```
 ## Version
-1.0.0 - base.
+1.0.0 - base.  
 1.1.0 - Use my util
 
 ## Extends
