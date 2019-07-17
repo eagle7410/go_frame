@@ -14,12 +14,18 @@ type env struct {
 	WorkDir,
 	TimeZone,
 	Place string
-	IsDev bool
-	AllowedMethods [] string
+	IsDev, IsCorsAllowCredentials bool
+	AllowedMethods                []string
 }
 
-func (i *env) GetIsDev() bool {
-	return i.IsDev
+func (i *env) GetLinkIsDev() *bool {
+	return &i.IsDev
+}
+func (i *env) GetLinkAllowedMethods() *[]string {
+	return &i.AllowedMethods
+}
+func (i *env) GetLinkIsCorsAllowCredentials() *bool {
+	return &i.IsCorsAllowCredentials
 }
 
 func (i *env) Init() error {
@@ -63,6 +69,10 @@ func (i *env) Init() error {
 
 	if strings.ToLower(os.Getenv("isDev")) == "true" {
 		i.IsDev = true
+	}
+
+	if strings.ToLower(os.Getenv("IsCorsAllowCredentials")) == "true" {
+		i.IsCorsAllowCredentials = true
 	}
 
 	if i.TimeZone == "" {

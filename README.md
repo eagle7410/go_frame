@@ -2,10 +2,12 @@ env example
 ```.env
 Place=Develop
 isDev=true
+IsCorsAllowCredentials=true
 ```
 ## Version
 1.0.0 - base.  
 1.1.0 - Use my util
+1.2.0 - Update my util. IsCorsAllowCredentials and better cors.
 
 ## Extends
 [Extends description](https://github.com/eagle7410/fsp-eagle/blob/master/ext.md)
